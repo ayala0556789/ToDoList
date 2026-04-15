@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S+OCRFghwdk=",
+  "dgSpecHash": "LcpoohN9OgU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Documents\\לימודים\\פרקטיקוד\\lesson2\\server\\TodoApi.csproj",
+  "projectFilePath": "C:\\Users\\user\\Documents\\לימודים\\פרקטיקוד\\ToDoList\\server\\TodoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.0\\microsoft.aspnetcore.authentication.jwtbearer.9.0.0.nupkg.sha512",
