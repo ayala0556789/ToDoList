@@ -62,8 +62,6 @@ using System.Security.Claims;
             var app = builder.Build();
        
        
-            if (app.Environment.IsDevelopment())
-            {
                 app.UseSwagger(options =>
                 {
                     options.SerializeAsV2 = true;
@@ -73,7 +71,7 @@ using System.Security.Claims;
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
                     options.RoutePrefix = string.Empty;
                 });
-            }
+            
        
             app.UseCors("AllowAllOrigins");//cors
 
