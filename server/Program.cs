@@ -18,9 +18,15 @@ using System.Security.Claims;
             
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("TodoDB");
-                                          
-            builder.Services.AddDbContext<ToDoDbContext>(options =>       
-            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+            builder.Services.AddDbContext<ToDoDbContext>(options =>
+            options.UseMySql(connectionString, 
+            ServerVersion.AutoDetect(connectionString),
+            mySqlOptions => mySqlOptions.MaxBatchSize(10)) // הגבלת גודל הבאץ' לחיסכון במשאבים
+            );
+            
+            // builder.Services.AddDbContext<ToDoDbContext>(options =>       
+            // options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
            
             builder.Services.AddEndpointsApiExplorer();
             
