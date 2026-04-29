@@ -31,7 +31,7 @@ using System.Security.Claims;
                 options.AddPolicy("AllowAllOrigins",
                 builder =>
                 {
-                    builder.AllowAnyOrigin()
+                    builder.WithOrigins("https://todolist-client-3g3x.onrender.com")
                     .AllowAnyMethod()
                     .AllowAnyHeader();
                });
