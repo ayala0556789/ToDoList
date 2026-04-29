@@ -20,7 +20,8 @@ axios.interceptors.response.use(
       console.error('Error response:', error.response);
       if (error.response && error.response.status === 401) {
           localStorage.removeItem("token"); // מחיקת הטוקן הלא תקין
-          window.location.href = "/login"; // הפניה לדף לוגין
+          localStorage.removeItem("userName");  
+        window.location.href = "/"; // הפניה לדף לוגין
       }
       return Promise.reject(error);
   }
