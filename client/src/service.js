@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // axios.defaults.baseURL= "http://localhost:5058"
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+
+axios.defaults.baseURL = "https://todolistserver-it24.onrender.com";
 
 // --- : הוספת טוקן לכל בקשה יוצאת ---
 axios.interceptors.request.use(config => {
