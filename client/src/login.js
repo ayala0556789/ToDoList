@@ -27,7 +27,8 @@ function Login({ onLogin }) {
                 alert("נרשמת בהצלחה! עכשיו אפשר להתחבר");
                 setIsRegister(false);
             } else {
-                await service.login(username, password);
+                const response = await service.login(username, password);
+                localStorage.setItem("userName", username);
                 onLogin();
             }
         } catch (error) {
