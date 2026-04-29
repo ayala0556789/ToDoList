@@ -32,23 +32,37 @@ public partial class ToDoDbContext : DbContext
 
         modelBuilder.Entity<Item>(entity =>
         {
+            // entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            // entity.ToTable("items");
+
+            // entity.Property(e => e.Name).HasMaxLength(100);
+
+            
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("items");
+            entity.ToTable("items"); // שם הטבלה באותיות קטנות
 
-            entity.Property(e => e.Name).HasMaxLength(100);
+            // הגדרה מפורשת של שמות העמודות כפי שהם ב-Workbench
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name).HasColumnName("name").HasMaxLength(255);
+            entity.Property(e => e.IsComplete).HasColumnName("isComplete");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
             entity.ToTable("users"); // שם הטבלה במסד הנתונים
-
+            
+            entity.Property(e => e.Id).HasColumnName("id");
+            
             entity.Property(e => e.Username)
+                .HasColumnName("username")
                 .IsRequired()
                 .HasMaxLength(50);
 
             entity.Property(e => e.Password)
+                .HasColumnName("password")
                 .IsRequired()
                 .HasMaxLength(255); // אורך מוגדל עבור הצפנה בעתיד
         });
